@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<voips>
+	<voip nome="Pedro Miguel Moreira" ext="23207" servico="docente" />
+	<voip nome="Pedro Miguel Faria"   ext="23207" servico="docente"/>
+	<voip nome="Pedro Miguel Castro"  ext="23201" servico="docente"/>
+	<voip nome="Pedro Miguel Castro"  ext="23999" servico="coordenador mestrado tecnologias e gestão de sistemas de informação"/>
+	<voip2>
+		<voip nome="XXX" ext="8888" servico="XXXXX"></voip>
+	</voip2>
+</voips>

@@ -1,0 +1,92 @@
+<html>
+	<head>
+		<style>
+		   /*
+			*  voip search results are shown in a div with id=results
+			*/
+			#results {
+				font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+			}
+			/*
+			 * each info field is enclosed into a span rendered as an inline-block
+			 */
+			#results span {
+				display:inline-block;
+				margin:1px;
+				background-color:#AAAAFF;
+				color:navy;
+				width:200px;
+			}
+		</style>
+		<script src="jquery/jquery-1.8.3.min.js"></script>
+		<script>
+		
+			/*
+			 * doument is loaded and ready to be handled
+			 */
+			$(document).ready(init);
+			
+			
+			/*
+			 * initializes the page (events, initial status)
+			 */
+			function init() {
+				// force an initial search
+				doSearch();
+				//search each time a key up occurs in the context of the field
+				$("#isearch").keyup(doSearch);
+			}
+			
+			/*
+			 * doSearch: ajax request with a search string
+			 */
+			function doSearch () {
+				var ss = $("#isearch").val();
+				$.get('testexml.php',{s:ss},onResult)
+			}
+			
+			/*
+			 * doResult: parses and displays search results
+			 */
+			function onResult(data) {
+				// clears the results div
+				$("#results").html("");
+				// parses the XML string into a DOM document
+				var resultXML = $.parseXML(data);
+				// converts the resulting DOM document into a jQuery Object
+				var result = $( resultXML );
+				// finds all 'voip' nodes
+				var voips = result.find("voip");
+				// for each 'voip' node showResult()
+				voips.each(showResult);
+			}
+			
+			/*
+			 * display a result
+			 */
+			function showResult(index,element) {
+				//debugger;
+				var newResult = $("<div/>");
+				newResult.addClass('voipresult')
+				var name = $(element).find("nome").text();
+				var ext  = $(element).find("ext").text();
+				var serv = $(element).find("serv").text();
+				var newSpanNome = $("<span/>");
+				var newSpanExt  = $("<span/>");
+				var newSpanServ = $("<span/>");
+				newSpanNome.html(name);
+				newSpanExt.html(ext);
+				newSpanServ.html(serv);
+				newResult.append(newSpanNome);
+				newResult.append(newSpanExt);
+				newResult.append(newSpanServ);
+				$("#results").append(newResult);
+			}
+
+		</script>
+	</head>
+	<body>
+			<input id="isearch" type="text"/>
+			<div id="results"></div>
+	</body>
+</html>

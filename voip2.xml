@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<voips>
+	<voip>
+		<nome>Pedro Miguel do Vale Moreira</nome>
+		<ext>9999</ext>
+		<serv>docente</serv>
+	</voip>
+	<voip>
+		<nome>Paulo Emanuel Afonso</nome>
+		<ext>8888</ext>
+		<serv>docente</serv>
+	</voip>
+	<voip>
+		<nome>Paula Alexandra Rego</nome>
+		<ext>8899</ext>
+		<serv>docente</serv>
+	</voip>
+	<voip>
+		<nome> José Mário Rodrigues</nome>
+		<ext> 1299 </ext>
+		<serv>Secretariado da Direção</serv>
+	</voip>
+	<voip>
+		<nome> Luísa anjos</nome>
+		<ext> 3488 </ext>
+		<serv>GAC - Gabinete de Apoio aos Cursos</serv>
+	</voip>
+</voips>
