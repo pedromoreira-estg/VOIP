@@ -20,7 +20,7 @@ pre {
 <h2> em $_GET[]</h2>
 <pre>
 <?php
-// apenas mostra o estado da vari�vel
+// apenas mostra o estado da variável
 print_r($_GET);
 
 ?>
@@ -29,7 +29,7 @@ print_r($_GET);
 <h2> em $_POST[]</h2>
 <pre>
 <?php
-// apenas mostra o estado da vari�vel
+// apenas mostra o estado da variável
 print_r($_POST);
 
 ?>
@@ -38,13 +38,10 @@ print_r($_POST);
 <h2> em $_FILES[]</h2>
 <pre>
 <?php
-// apenas mostra o estado da vari�vel
+// apenas mostra o estado da variável
 print_r($_FILES);
 
 ?>
 </pre>
-<?php 
-include('footer.inc')
-?>
 </body>
 </html>
